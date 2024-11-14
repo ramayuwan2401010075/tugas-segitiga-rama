@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luas dan Keliling Segitiga</title>
+  <style>
+
+    *{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .card{
+      width: 50%;
+      background-color: bisque;
+      box-shadow: 0 5px 5px 0 rgb(red, green, blue);
+      transition: 0,3s;
+      border-style: inset;
+      border-width: 5px;
+      border-color: black
+    }
+    .cardbody{
+      padding: 2px 16px
+    }
+
+    .tengah{
+      display: flex;
+      justify-content: center;
+    }
+    .cardfooter{
+      padding: 8px;
+      background-color: black;
+      display: flex; justify-content: center;
+    }
+    #txHasil{
+      font-size: 20px;
+    }
+    
+    label{
+      font-weight: bold;
+      font-size: 14px;
+    }
+    input[type=text]{
+      width: 95%;
+      padding: 2px;
+      margin: 8px;
+    }
+    button{
+      border: 3px;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: bisque;
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+    }
+    label1{
+      font-weight: bold;
+      font-size: 20px;
+      color: rgb(0, 0, 0);
+    }
+    label2{
+      font-weight: bold;
+      font-size: 20px;
+      color: rgb(0, 0, 0);
+    }
+    h1{
+      display: flex; justify-content: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="tengah">
+    <div class="card">
+  
+    <div class="cardbody">
+      <form>
+        <label>Rama Yuwan Wicaksono<br> 2401010075</label>
+      </form>
+  <h1 id="txhasil"> Bangun Ruang Segitiga</h1>
+
+  <form>
+    <label1>Cari Luas:</label1><br>
+    <label>Nilai Alas (meter)</label><br>
+    <input type="text" name="txAlas" id="txAlas"><br>
+    <label>Nilai Tinggi (meter)</label><br>
+    <input type="text" name="txTinggi" id="txTinggi"><br>
+    <br><br>
+
+    <label2>Cari Kelilling:</label2><br>
+    <label>Nilai Sisi A (meter)</label>
+    <input type="text" name="txA" id="txA">
+    <label>Nilai Sisi B (meter)</label>
+    <input type="text" name="txB" id="txB">
+    <label>Nilai Sisi C (meter)</label>
+    <input type="text" name="txC" id="txC">
+  </form>
+  <div id="txHasil"> Nilai Luas dan Keliling</div>
+  <div class="cardfooter">
+  <button onclick="hitung()">Hitung Luas dan Keliling</button> 
+
+  </div>
+  </div>
+  </div>
+
+<script>
+
+  function hitung(){
+    //alert("Belajar JavaScript")
+    let Alas= document.getElementById("txAlas").value
+    let Tinggi= document.getElementById("txTinggi").value
+
+//kelliling
+    let A=document.getElementById("txA").value
+    let B=document.getElementById("txB").value
+    let C=document.getElementById("txC").value
+
+    //Proses Luas
+    let Luas= 0.5*Alas*Tinggi                             
+    let hsl= "Hitung Luas Segitiga:<br>" 
+    hsl+= "Luas= 1/2 x Alas x Tinggi<br>"
+    hsl+= "Luas= +1/2+ x "+Alas+"m x "+Tinggi+"m <br>"
+    hsl+= "Luas= "+Luas+"m<sup>2</sup><br><br>"
+//keliling
+    let Kll= Number(A)+Number(B)+Number(C)
+    hsl+= "Hitung Keliling Segitiga:<br>"
+    hsl+= "Kll= A + B + C <br>"
+    hsl+= "Kll= "+A+"m + "+B+"m + "+C+"m <br>"
+    hsl+= "Kll= "+Kll+"m<sup>2</sup>"
+  
+
+document.getElementById("txHasil").innerHTML=hsl
+  }
+</script>
+
+</body>
+
+</html>
